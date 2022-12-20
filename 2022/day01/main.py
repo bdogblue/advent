@@ -12,15 +12,11 @@ def main():
         if line != '':
             elves[i] += int(line)
         else:
-            if i == 0:
-                biggest_number = elves[i]
-            else:
-                if biggest_number < elves[i]:
-                    biggest_number = elves[i]
-            
             elves.append(0)
             i += 1
 
-    print("This is the biggest amount of calories that one of the elves is carring is: ", biggest_number)
+    elves.sort(reverse=True)
+
+    print("This is the biggest amount of calories that the top three elves are carring is: ", (elves[0]+elves[1]+elves[2]))
 
 main()
